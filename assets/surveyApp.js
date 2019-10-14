@@ -1,4 +1,4 @@
-console.log("working")
+
 let x=0;
 const questions=[
     "1",
