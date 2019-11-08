@@ -13,7 +13,7 @@ The user's answers are then compared with other users in the friends array to re
 * express.js
 
 
-`$("#submit").on("click", function(event) {
+````$("#submit").on("click", function(event) {
     event.preventDefault();
  function validateForm() {
     var isValid = true;
@@ -47,4 +47,4 @@ The user's answers are then compared with other users in the friends array to re
         $("#q9").val(),
         $("#q10").val()
       ]
-    }`
+    }````
