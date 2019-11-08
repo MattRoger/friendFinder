@@ -47,4 +47,4 @@ The user's answers are then compared with other users in the friends array to re
         $("#q9").val(),
         $("#q10").val()
       ]
-    }````
+    }
