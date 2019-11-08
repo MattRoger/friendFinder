@@ -22,7 +22,6 @@ let config = {
 
  $("#submit").on("click", function(event) {
     event.preventDefault();
- // Capture the form inputs
  function validateForm() {
     var isValid = true;
     $(".form-control").each(function() {
@@ -39,10 +38,7 @@ let config = {
     });
     return isValid;
   }
-
-  // If all required fields are filled
   if (validateForm()) {
-    // Create an object for the user"s data
     var userData = {
       name: $("#name").val(),
       photo: $("#photo").val(),
