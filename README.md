@@ -13,7 +13,7 @@ The user's answers are then compared with other users in the friends array to re
 * express.js
 
 ## Build Status
-Ready to find friends(complete) :checkered-flag:
+Ready to find friends :checkered_flag:
 
 ## Code style
 If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex
