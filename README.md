@@ -1,5 +1,6 @@
 # Sci-fi Friend Finder! :alien:
  A web app to find your sci-fi friend
+ [Find your friend and see the app!](https://evening-sea-45437.herokuapp.com/)
 
 ## How to use?
 The user starts the by entering their name and adding a link to their photo. They are then asked how strongly they agree or disagree with 10 questions. The user information is placed into the friends.json file in the friends array.
