@@ -70,9 +70,68 @@ var friends = [
       </select>
     </div>
 ```
+#### The Results model
+```javascript
+ <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Best Match</h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="match-name"></h2>
+          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+        </div>
+        <div class="modal-footer">
+          <button class="submit button fBtn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+```
 
+### apiRoutes.js
+This is how we enter a user into the api and compare exisiting friends
+```javascript
+
+module.exports = function (app) {
+
+    app.get("/api/friends", function (req, res) {
+        res.json(friends);
+    });
+    app.post("/api/friends", function (req, res) {
+        var bestMatch = {
+            name: "",
+            photo: "",
+            friendDifference: Infinity
+        };
+        var userData = req.body;
+        var userScores = userData.scores;
+        var totalDifference;
+
+        for (var i = 0; i < friends.length; i++) {
+            var currentFriend = friends[i];
+            totalDifference = 0;
+            console.log(currentFriend.name);
+            for (var j = 0; j < currentFriend.scores.length; j++) {
+                var currentFriendScore = currentFriend.scores[j];
+                var currentUserScore = userScores[j];
+                totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
+            }
+            if (totalDifference <= bestMatch.friendDifference) {
+                bestMatch.name = currentFriend.name;
+                bestMatch.photo = currentFriend.photo;
+                bestMatch.friendDifference = totalDifference;
+              }
+            }
+            friends.push(userData); 
+            res.json(bestMatch);
+        });
+      }; 
+```
 
 ## Tech/framework used
+* Javascript
+* Express
+* Node
+* Api
 
 ## Features
 
