@@ -8,18 +8,29 @@ The user starts the by entering their name and adding a link to their photo. The
 
 The user's answers are then compared with other users in the friends array to return the most compatible user.
 
-## Tech used
+
+## Tech/framework used
 * Javascript
-* node.js
-* bootstrap
-* express.js
+* Express
+* Node
+* API
+* Bootstrap
+
+## Features
+* A custom API
+* Font Awesome Icons
 
 ## Build Status
 Ready to find friends :checkered_flag:
 
 ## Code style
+
+### The Home Screen
+![home](https://github.com/MattRoger/screenshots/blob/master/friendfinder/home.png?raw=true)
+
 ### The friends api
-sample
+A sample of the API that holds the information about possible friends.
+
 ```javascript
 var friends = [
     {
@@ -50,6 +61,10 @@ var friends = [
     },
 ```
 ### The Survey page
+This page ask a user to input a name, a link to an image and answer 10 questions. If they try to hit submit before completeing the survey, the page alerts them that they have left fields incomplete.
+
+![Survey gif](https://github.com/MattRoger/screenshots/blob/master/friendfinder/FriendFinder.gif?raw=true)
+
 ```html
 <div class="aboutContainer">
       <h3>About You</h3>
@@ -73,6 +88,11 @@ var friends = [
     </div>
 ```
 #### The Results model
+
+![results](https://github.com/MattRoger/screenshots/blob/master/friendfinder/end.png?raw=true)
+
+When the user hits submit, the app averages their answers and compares them to exisiting friends. The App also adds the user to thr API.
+
 ```javascript
  <div class="modal-content">
         <div class="modal-header">
@@ -129,14 +149,6 @@ module.exports = function (app) {
       }; 
 ```
 
-## Tech/framework used
-* Javascript
-* Express
-* Node
-* Api
-
-## Features
-
 ## Installation
 * :trident: Fork it
 * :sheep: Clone it
@@ -155,4 +167,3 @@ module.exports = function (app) {
   * :man_office_worker: www.linkedin.com/in/matt-roger/
 
 
-## License
